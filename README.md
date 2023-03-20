@@ -1,5 +1,7 @@
 # Stella Maris: Vim color scheme
 
+![The Stella Maris Vim color scheme logo.](stella-logo.svg)
+
 ![A screenshot of a MacVim window using the Stella Maris color scheme.](screenshot.png)
 
 Stella Maris is my personal Vim color scheme. It:
