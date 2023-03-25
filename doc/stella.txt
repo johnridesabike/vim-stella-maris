@@ -1,4 +1,4 @@
-*stella.txt*	For Vim version 9.0	Last change: 2023 Mar 19
+*stella.txt*	For Vim version 9.0	Last change: 2023 Mar 25
 
 
 		  "Stella Maris" color scheme    by John

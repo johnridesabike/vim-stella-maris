@@ -154,7 +154,7 @@ Identifier            brightblue        none              bold
 PreProc               brightmagenta     none
 Special               brightred         none
 Statement             brightyellow      none
-Todo                  darkblack         brightyellow
+Todo                  brightyellow      none              reverse,italic
 Type                  brightgreen       none
 Underlined            brightblue        none              underline
 ; See `:help CursorIM`
@@ -268,7 +268,7 @@ Identifier            darkcyan          none              bold
 PreProc               darkmagenta       none
 Special               darkred           none
 Statement             darkyellow        none
-Todo                  darkblack         brightyellow      bold
+Todo                  darkyellow        none              reverse,italic
 Type                  darkgreen         none
 Underlined            darkblue          none              underline
 ; See `:help CursorIM`
