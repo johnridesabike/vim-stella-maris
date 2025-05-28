@@ -2,6 +2,10 @@
 
 ![The Stella Maris Vim color scheme logo.](stella-logo.svg)
 
+[Project home](https://sr.ht/~johnridesabike/vim-stella-maris/) |
+[Git repository](https://git.sr.ht/~johnridesabike/vim-stella-maris) |
+[Mailing list](https://lists.sr.ht/~johnridesabike/public-inbox)
+
 Stella Maris is my ([John's][0]) personal Vim color scheme. It:
 
 - uses sixteen colors that map to the usual terminal colors.
@@ -24,6 +28,7 @@ You can get Stella Maris by using Git to [clone its repository here][2]. After
 you add it to your Vim configuration (using your favorite package management
 tool), you can load it with `:colo[rscheme] stella`.
 
+Send any patches to <~johnridesabike/public-inbox@lists.sr.ht>
 
 ## License
 

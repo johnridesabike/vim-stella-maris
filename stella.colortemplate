@@ -2,59 +2,44 @@
 
 ; Information {{{
 ; Mandatory
-Full name:     Stella Maris
-Short name:    stella
-Author:        John <jbpjackson+vim@icloud.com>
-Website:       https://github.com/johnridesabike/vim-stella-maris
-Description:   A color scheme for our Star of the Sea.
-License:       Same as Vim
+Full name:    Stella Maris
+Short name:   stella
+Environments: gui 256 8 0
+Author:       John <jbpjackson+vim@icloud.com>
+URL:          https://sr.ht/~johnridesabike/vim-stella-maris/
+Description:  A color scheme for our Star of the Sea.
+License:      Same as Vim
 ; }}}
+
 
 ; Documentation {{{
-Include: _help.colortemplate
-; }}}
+helpfile
+*@shortname.txt*	For Vim version @vimversion	Last change: @date
 
-; Common linked groups {{{
-Boolean           ->  Constant
-Character         ->  Constant
-Conditional       ->  Statement
-CurSearch         ->  IncSearch
-CursorLineFold    ->  FoldColumn
-CursorLineSign    ->  SignColumn
-Debug             ->  Special
-Define            ->  PreProc
-Delimiter         ->  Special
-Exception         ->  Statement
-Float             ->  Constant
-Function          ->  Identifier
-Include           ->  PreProc
-Keyword           ->  Statement
-Label             ->  Statement
-Macro             ->  PreProc
-MessageWindow     ->  WarningMsg
-Number            ->  Constant
-Operator          ->  Statement
-PopupNotification ->  WarningMsg
-PopupSelected     ->  PmenuSel
-PreCondit         ->  PreProc
-QuickFixLine      ->  Search
-Repeat            ->  Statement
-SpecialChar       ->  Special
-SpecialComment    ->  Special
-StatusLineTerm    ->  StatusLine
-StatusLineTermNC  ->  StatusLineNC
-StorageClass      ->  Type
-String            ->  Constant
-Structure         ->  Type
-Tag               ->  Special
-Typedef           ->  Type
-LineNrAbove       ->  LineNr
-LineNrBelow       ->  LineNr
-; See `:help lCursor`
-lCursor           ->  Cursor
+
+		  @fullname color scheme
+		  by @author
+
+@fullname: @description
+
+
+==============================================================================
+Color scheme options					*@shortname-options*
+
+						*g:@prefix_transp_bg*
+Set to 1 if you want a transparent background. Takes effect only in the
+terminal.
+>
+	let g:@prefix_transp_bg = 0
+<
+
+ vim:tw=78:ts=8:noet:ft=help:norl:
+endhelpfile
 ; }}}
 
 Background: dark
+
+Include: _common.colortemplate
 
 ; Color palette {{{
 ;       Color name    GUI       Base256   Base16
@@ -80,25 +65,19 @@ Color:  brightmagenta #F382FF   ~         LightMagenta
 
 ; Terminal colors {{{
 Term colors:  darkblack     darkred         darkgreen     darkyellow
-Term colors:  darkblue      darkmagenta     darkcyan      darkwhite
-Term colors:  brightblack   brightred       brightgreen   brightyellow
-Term colors:  brightblue    brightmagenta   brightcyan    brightwhite
+              darkblue      darkmagenta     darkcyan      darkwhite
+              brightblack   brightred       brightgreen   brightyellow
+              brightblue    brightmagenta   brightcyan    brightwhite
 ; }}}
 
 ; Default highlight groups {{{
-Variant: gui
-#if get(g:, '@optionprefix_transp_bg', 0) && !has('gui_running')
-Variant: 256 8
-#if get(g:, '@optionprefix_transp_bg', 0)
-Variant: gui 256 8
-    Normal            brightwhite       none
-    Terminal          brightwhite       none
-#else
-    Normal            brightwhite       darkblack
-    Terminal          brightwhite       darkblack
-#endif
-
 ; Group               Foreground        Background        Attributes
+Normal                brightwhite       darkblack
+  /256/8/0
+  +transp_bg 1        brightwhite       none
+Terminal              brightwhite       darkblack
+  /256/8/0
+  +transp_bg 1        brightwhite       none
 ColorColumn           none              brightblack
 Conceal               none              none
 Cursor                darkgreen         brightwhite
@@ -128,10 +107,14 @@ Question              brightgreen       none
 Search                none              brightblack
 SignColumn            brightblue        none
 SpecialKey            brightblue        none
-SpellBad              none              none              t=underline g=undercurl s=brightred
-SpellCap              none              none              t=underline g=undercurl s=brightblue
-SpellLocal            none              none              t=underline g=undercurl s=brightcyan
-SpellRare             none              none              t=underline g=undercurl s=brightmagenta
+SpellBad              none              none              s=brightred     undercurl
+  /256/16/8/0         omit              omit              s=omit          underline
+SpellCap              none              none              s=brightblue    undercurl
+  /256/16/8/0         omit              omit              s=omit          underline
+SpellLocal            none              none              s=brightcyan    undercurl
+  /256/16/8/0         omit              omit              s=omit          underline
+SpellRare             none              none              s=brightmagenta undercurl
+  /256/16/8/0         omit              omit              s=omit          underline
 StatusLine            darkblack         darkwhite
 StatusLineNC          brightwhite       brightblack
 TabLine               darkwhite         brightblack
@@ -170,6 +153,8 @@ ToolbarButton         darkblack         brightyellow      bold
 
 Background: light
 
+Include: _common.colortemplate
+
 ; Color palette {{{
 ;       Color name    GUI       Base256   Base16
 Color:  darkblack     #0F0500   ~         Black
@@ -194,25 +179,19 @@ Color:  brightmagenta #F48FFF   ~         LightMagenta
 
 ; Terminal colors {{{
 Term colors:  darkblack     darkred         darkgreen     darkyellow
-Term colors:  darkblue      darkmagenta     darkcyan      darkwhite
-Term colors:  brightblack   brightred       brightgreen   brightyellow
-Term colors:  brightblue    brightmagenta   brightcyan    brightwhite
+              darkblue      darkmagenta     darkcyan      darkwhite
+              brightblack   brightred       brightgreen   brightyellow
+              brightblue    brightmagenta   brightcyan    brightwhite
 ; }}}
 
 ; Default highlight groups {{{
-Variant: gui
-#if get(g:, '@optionprefix_transp_bg', 0) && !has('gui_running')
-Variant: 256 8
-#if get(g:, '@optionprefix_transp_bg', 0)
-Variant: gui 256 8
-    Normal            darkblack         none
-    Terminal          darkblack         none
-#else
-    Normal            darkblack         brightwhite
-    Terminal          darkblack         brightwhite
-#endif
-
 ; Group               Foreground        Background        Attributes
+Normal                darkblack         brightwhite
+  /256/8/0
+  +transp_bg 1        darkblack         none
+Terminal              darkblack         brightwhite
+  /256/8/0
+  +transp_bg 1        darkblack         none
 ColorColumn           none              darkwhite
 Conceal               none              none
 Cursor                brightgreen       brightblack
@@ -242,10 +221,14 @@ Question              darkgreen         none
 Search                none              darkwhite
 SignColumn            darkcyan          none
 SpecialKey            darkcyan          none
-SpellBad              none              none              t=underline g=undercurl s=brightred
-SpellCap              none              none              t=underline g=undercurl s=darkcyan
-SpellLocal            none              none              t=underline g=undercurl s=darkblue
-SpellRare             none              none              t=underline g=undercurl s=darkmagenta
+SpellBad              none              none              s=brightred     undercurl
+  /256/16/8/0         omit              omit              s=omit          underline
+SpellCap              none              none              s=darkcyan      undercurl
+  /256/16/8/0         omit              omit              s=omit          underline
+SpellLocal            none              none              s=darkblue      undercurl
+  /256/16/8/0         omit              omit              s=omit          underline
+SpellRare             none              none              s=darkmagenta   undercurl
+  /256/16/8/0         omit              omit              s=omit          underline
 StatusLine            darkblack         darkwhite
 StatusLineNC          brightwhite       brightblack
 TabLine               brightblack       darkwhite
@@ -280,5 +263,63 @@ ToolbarButton         darkblack         brightyellow      bold
 
 ; B/W variant {{{
 Background: any
-Include: _bw.colortemplate
+
+; Group               Foreground        Background        Attributes
+Normal        /0      omit              omit
+ColorColumn   /0      omit              omit              reverse
+Conceal       /0      omit              omit
+Cursor        /0      omit              omit
+CursorColumn  /0      omit              omit              reverse
+CursorLine    /0      omit              omit              underline
+CursorLineNr  /0      omit              omit              reverse,bold,underline
+DiffAdd       /0      omit              omit              reverse,underline
+DiffChange    /0      omit              omit              reverse,underline
+DiffDelete    /0      omit              omit              reverse,underline
+DiffText      /0      omit              omit              bold,reverse,underline
+Directory     /0      omit              omit
+EndOfBuffer   /0      omit              omit
+ErrorMsg      /0      omit              omit              bold,reverse
+FoldColumn    /0      omit              omit              reverse
+Folded        /0      omit              omit              reverse,underline
+IncSearch     /0      omit              omit              reverse,bold
+LineNr        /0      omit              omit              reverse
+MatchParen    /0      omit              omit              bold,underline
+ModeMsg       /0      omit              omit
+MoreMsg       /0      omit              omit
+NonText       /0      omit              omit
+Pmenu         /0      omit              omit              reverse
+PmenuSbar     /0      omit              omit
+PmenuSel      /0      omit              omit
+PmenuThumb    /0      omit              omit
+PopupSelected /0      omit              omit              reverse
+Question      /0      omit              omit              standout
+Search        /0      omit              omit              underline
+SignColumn    /0      omit              omit              reverse
+SpecialKey    /0      omit              omit              bold
+StatusLine    /0      omit              omit              reverse,bold
+StatusLineNC  /0      omit              omit              reverse
+TabLine       /0      omit              omit              reverse,underline
+TabLineFill   /0      omit              omit              reverse,underline
+TabLineSel    /0      omit              omit              bold
+Title         /0      omit              omit              bold
+VertSplit     /0      omit              omit              reverse
+Visual        /0      omit              omit              reverse
+VisualNOS     /0      omit              omit
+WarningMsg    /0      omit              omit              standout
+WildMenu      /0      omit              omit              bold
+; Other conventional group names (see `:help group-name`)
+Comment       /0      omit              omit              italic
+Constant      /0      omit              omit              bold
+Error         /0      omit              omit              reverse
+Identifier    /0      omit              omit              italic
+Ignore        /0      omit              omit
+PreProc       /0      omit              omit              italic
+Special       /0      omit              omit              bold
+Statement     /0      omit              omit              bold
+Todo          /0      omit              omit              bold,underline
+Type          /0      omit              omit              bold
+Underlined    /0      omit              omit              underline
+CursorIM      /0      omit              omit
+ToolbarLine   /0      omit              omit              reverse
+ToolbarButton /0      omit              omit              bold,reverse
 ; }}}

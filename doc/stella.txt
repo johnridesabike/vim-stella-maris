@@ -1,12 +1,14 @@
-*stella.txt*	For Vim version 9.0	Last change: 2023 Jun 11
+*stella.txt*	For Vim version 9	Last change: 2025 May 28
 
 
-		  "Stella Maris" color scheme    by John
+		  Stella Maris color scheme
+		  by John <jbpjackson+vim@icloud.com>
 
-A color scheme for our Star of the Sea.
+Stella Maris: A color scheme for our Star of the Sea.
+
 
 ==============================================================================
-Color scheme options					stella-options*
+Color scheme options					*stella-options*
 
 						*g:stella_transp_bg*
 Set to 1 if you want a transparent background. Takes effect only in the
@@ -16,4 +18,3 @@ terminal.
 <
 
  vim:tw=78:ts=8:noet:ft=help:norl:
-

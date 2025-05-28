@@ -1,0 +1,46 @@
+; vim: ft=colortemplate fdm=marker cc=22,40,58 et ts=2 sw=2
+
+#const transp_bg = get(g:, '@prefix_transp_bg', 0)
+
+; Legacy non-standard italics detection.
+#const italic = (&t_ZH != '' && &t_ZH != '[7m') || has('gui_running')
+
+; Common linked groups {{{
+Boolean           ->  Constant
+Character         ->  Constant
+Conditional       ->  Statement
+CurSearch         ->  IncSearch
+CursorLineFold    ->  FoldColumn
+CursorLineSign    ->  SignColumn
+Debug             ->  Special
+Define            ->  PreProc
+Delimiter         ->  Special
+Exception         ->  Statement
+Float             ->  Constant
+Function          ->  Identifier
+Include           ->  PreProc
+Keyword           ->  Statement
+Label             ->  Statement
+Macro             ->  PreProc
+MessageWindow     ->  WarningMsg
+Number            ->  Constant
+Operator          ->  Statement
+PopupNotification ->  WarningMsg
+PopupSelected     ->  PmenuSel
+PreCondit         ->  PreProc
+QuickFixLine      ->  Search
+Repeat            ->  Statement
+SpecialChar       ->  Special
+SpecialComment    ->  Special
+StatusLineTerm    ->  StatusLine
+StatusLineTermNC  ->  StatusLineNC
+StorageClass      ->  Type
+String            ->  Constant
+Structure         ->  Type
+Tag               ->  Special
+Typedef           ->  Type
+LineNrAbove       ->  LineNr
+LineNrBelow       ->  LineNr
+; See `:help lCursor`
+lCursor           ->  Cursor
+; }}}
